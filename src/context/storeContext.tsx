@@ -1,10 +1,7 @@
 import { createContext, useState } from "react";
+import type { CharacterType } from "../services/apiTypes";
 
-type CharacterType = {
-  id: number;
-  name: string;
-  images: string[];
-};
+
 
 type StoreType = {
   characters: CharacterType[];

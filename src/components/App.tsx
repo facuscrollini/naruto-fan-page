@@ -1,4 +1,4 @@
-import '../App.css'
+import '../styles/index.css'
 import { NavBar } from './NavBar'
 import { Footer } from './Footer'
 import { Outlet } from 'react-router'
