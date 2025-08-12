@@ -1,12 +1,12 @@
 import '../styles/index.css'
-import { NavBar } from './NavBar'
-import { Footer } from './Footer'
+import { NavBar } from '../components/NavBar'
+import { Footer } from '../components/Footer'
 import { Outlet } from 'react-router'
 
 
 
 
-function App() {
+function PublicLayout() {
 
   return (
     <>
@@ -17,4 +17,4 @@ function App() {
   )
 }
 
-export default App
+export default PublicLayout

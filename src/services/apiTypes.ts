@@ -1,6 +1,6 @@
 //Teams, Kekkei Genkai, Village and Clan Type
 
-export type SimpleGroup = {
+export type SimpleGroupType = {
   id: number;
   name: string;
   characters: number[];
@@ -77,15 +77,6 @@ export type TailedBeastType = {
   voiceActors?: VoiceActorsType;
 };
 
-export type DebutType = {
-  manga?: string;
-  anime?: string;
-  novel?: string;
-  movie?: string;
-  game?: string;
-  ove?: string;
-  appearsIn?: string;
-};
 
 export type FamilyType = {
   "incarnation with the god tree"?: string;
@@ -104,10 +95,7 @@ export type PersonalType = {
   species?: string;
 };
 
-export type VoiceActorsType = {
-  japanese?: string | string [];
-  english?: string | string[];
-};
+
 //TailedBeast Type End __________________________________________________________________
 
 //Chatacter Type and SubTypes________________________________________________________
@@ -116,6 +104,35 @@ export type CharacterType = {
   id: number;
   name: string;
   images: string[];
+  debut?: DebutType;
+  jutsu?:string[];
+  natureType?:string[];
+  personal?: PersonalType;
+  family?: AkatsukiFamilyType;
+  rank?:RankType;
+  tools?:string[];
+  uniqueTraits?:string[];
+  voiceActors?:VoiceActorsType;
+  
 };
 
 //Character Type End __________________________________________________________________
+
+//Shared Types__________________________________________________________________________
+
+export type DebutType = {
+  manga?: string;
+  anime?: string;
+  novel?: string;
+  movie?: string;
+  game?: string;
+  ove?: string;
+  appearsIn?: string;
+};
+
+export type VoiceActorsType = {
+  japanese?: string | string [];
+  english?: string | string[];
+};
+
+//Shared Types End ________________________________________________________________________

@@ -9,19 +9,19 @@ return (
     <Link to="/">
      <button type="button">Home</button>
     </Link>
-    <Link to="/character">
+    <Link to="/auth/character">
      <button type="button">Character</button>
     </Link>
-    <Link to="/clan">
+    <Link to="/auth/clan">
      <button type="button">Clan</button>
     </Link>
-    <Link to="/group">
+    <Link to="/auth/group">
      <button type="button">Group</button>
     </Link>
-    <Link to="/village">
+    <Link to="/auth/village">
      <button type="button">Village</button>
     </Link>
-    <Link to="/catalog">
+    <Link to="/auth/catalog">
      <button type="button">Catalog</button>
     </Link>
      </nav>
