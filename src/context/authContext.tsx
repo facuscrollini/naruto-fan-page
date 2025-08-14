@@ -19,6 +19,8 @@ password:string,
 
 export type ValueType = {
     user?: UserType,
+    catalog?:string,
+    changeCatalog: (type:string)=> void
     login?: (username:string, email:string, password:string) => void,
     logout?: ()=> void
 }
@@ -30,6 +32,7 @@ export const AuthContext = createContext<ValueType | undefined>(undefined)
 export const AuthProvider = ({children}:Props) =>{
 
 const [user, setUser] = useState<UserType>(initialState)
+const [catalog, setCatalog] = useState<string>("")
 
 const login = (userName:string, email:string, password:string)=>{
 setUser({
@@ -48,8 +51,12 @@ const logout = () =>{
     })
 }
 
+const changeCatalog = async(type: string) =>{
+    await setCatalog(type)
+}
+
 return(
-<AuthContext.Provider value={{user, login, logout}}>
+<AuthContext.Provider value={{user,catalog, changeCatalog, login, logout}}>
     {children}
 </AuthContext.Provider>
     

@@ -37,7 +37,7 @@ useSaveAll(dispatch)
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         {/* Vistas restringidas */}
-        <Route path="catalog" element={<Catalog type="characters" />} />
+        <Route path="catalog" element={<Catalog />} />
         <Route path="group" element={<Group />} />
         <Route path="clan" element={<Clan />} />
         <Route path="character" element={<Character />} />

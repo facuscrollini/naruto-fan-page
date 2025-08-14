@@ -2,19 +2,17 @@ import { CatalogIndividual } from "../../components/catalog-components/CatalogIn
 import { CatalogList } from "../../components/catalog-components/CatalogList"
 import { CatalogTitle } from "../../components/catalog-components/CatalogTitle"
 
-type CatalogType = {
-    type: string
-}
 
 
-export const Catalog = ({type}:CatalogType) =>{
+
+export const Catalog = () =>{
 
 
 
 
     return (
         <>
-        <CatalogTitle type={type}/>
+        <CatalogTitle />
         <CatalogList/>
         <CatalogIndividual/>
         </>

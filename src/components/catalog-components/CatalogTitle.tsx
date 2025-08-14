@@ -1,11 +1,11 @@
-type TypeType = {
-    type: string
-}
+import { useAuth } from "../../hooks/useContext/useAuth"
 
-export const CatalogTitle = ({type}:TypeType) =>{
+export const CatalogTitle = () =>{
+
+    const {catalog} = useAuth()
     return (
         <>
-        <div>List of {type}</div>
+        <div>List of {catalog}</div>
         </>
     )
 }

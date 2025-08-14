@@ -1,19 +1,16 @@
-import { useEffect } from "react"
-import { useNaruto } from "../../hooks/useContext/useNaruto"
+import { useAuth } from "../../hooks/useContext/useAuth"
 
 export const CatalogList = () =>{
 
-const {store} = useNaruto()
+const {catalog} = useAuth()
 
 
 
-useEffect(()=>{
-console.log(store)
-}, [store])
+
     return (
         <>
         <div>
-Hola soy catalogo
+Hola soy catalogo de {catalog}
         </div>
         </>
     )
