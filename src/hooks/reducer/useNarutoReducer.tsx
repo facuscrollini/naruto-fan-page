@@ -1,5 +1,5 @@
-import type { NarutoStoreType } from "../context/narutoContext";
-import type { AkatsukiType, CharacterType, SimpleGroupType, TailedBeastType } from "../services/apiTypes";
+import type { NarutoStoreType } from "../../context/narutoContext";
+import type { AkatsukiType, CharacterType, SimpleGroupType, TailedBeastType } from "../../services/apiTypes";
 
 export type ActionType = 
 | {type: "SAVE_CHARACTERS", payload: CharacterType[]}

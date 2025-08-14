@@ -1,6 +1,6 @@
 import { createContext, useReducer, type Dispatch } from "react";
 import type { AkatsukiType, CharacterType, SimpleGroupType, TailedBeastType } from "../services/apiTypes";
-import { useNarutoReducer, type ActionType } from "../hooks/useNarutoReducer";
+import { useNarutoReducer, type ActionType } from "../hooks/reducer/useNarutoReducer";
 
 
 

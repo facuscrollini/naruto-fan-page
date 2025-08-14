@@ -1,13 +1,11 @@
-import { URL_GET_GROUP, URL_GET_INDIVIDUAL } from "./urls"
+import {  URL_GET_PAGE_LIMIT } from "./urls"
 
-export const getGroup = async(type:string) =>{
-const response = await fetch(URL_GET_GROUP(type))
-const data = await response.json()
-return data
-}
 
-export const getIndividual = async(type:string,id:number) =>{
-    const response = await fetch(URL_GET_INDIVIDUAL(type, id))
+
+
+
+export const getPageAndLimit = async(type:string, limit:number)=>{
+    const response = await fetch(URL_GET_PAGE_LIMIT(type, limit))
     const data = await response.json()
     return data
 }

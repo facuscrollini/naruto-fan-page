@@ -35,7 +35,7 @@ export type RankType = {
 
 
 export type AkatsukiFamilyType = {
-    mother: string;
+    mother?: string;
 }
 
 export type AkatsukiPersonalType = {
@@ -107,7 +107,7 @@ export type CharacterType = {
   debut?: DebutType;
   jutsu?:string[];
   natureType?:string[];
-  personal?: PersonalType;
+  personal?: PersonalType | AkatsukiFamilyType;
   family?: AkatsukiFamilyType;
   rank?:RankType;
   tools?:string[];

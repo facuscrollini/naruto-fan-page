@@ -12,7 +12,18 @@ import { Register } from './pages/Auth/Register.page.tsx'
 import { AdminLayout } from './layouts/AdminLayout.tsx'
 import { Profile } from './pages/admin/Profile.page.tsx'
 import { DashBoard } from './pages/admin/DashBoard.page.tsx'
+import { useEffect } from 'react'
+import { useSaveAll } from './hooks/useSaveAll.tsx'
+import { useNaruto } from './hooks/useContext/useNaruto.tsx'
 export const AppRoute = () => {
+
+const {dispatch} = useNaruto()
+
+  useEffect(()=>{
+useSaveAll(dispatch)
+  }, [])
+
+  
   return (
     <Routes>
       {/* Public */}

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { NarutoContext } from "../context/narutoContext"
+import { NarutoContext } from "../../context/narutoContext"
 
 export const useNaruto = () =>{
     const context = useContext(NarutoContext)
