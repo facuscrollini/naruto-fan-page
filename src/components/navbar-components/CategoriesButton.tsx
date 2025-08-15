@@ -7,9 +7,9 @@ export type Props = {
   title: string
 }
 
-export const CategoriesButton = ({className, type, title}:Props) => {
+export const CategoriesButton = ({type, title}:Props) => {
 
-    const {catalog, changeCatalog} = useAuth()
+    const { changeCatalog} = useAuth()
  
 
     const seeCategory = () =>{
@@ -20,7 +20,7 @@ export const CategoriesButton = ({className, type, title}:Props) => {
 
   return (
     <NavLink to="/auth/catalog">
-     <button onClick={seeCategory}className="bg-green-300 rounded m-3 px-2 py-1 hover:cursor-pointer" type="button">{title}</button>
+     <button onClick={seeCategory}className="w-full m-0 bg-emerald-200 m-3 px-2 py-1 hover:cursor-pointer" type="button">{title}</button>
     </NavLink>
 
   )
