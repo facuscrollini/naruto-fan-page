@@ -43,12 +43,12 @@ export const CategoriesMenu = () => {
 
 
     return (
-        <div onClick={handleDropDown} className="w-40">
-            <button className={`relative bg-rose-800 text-rose-200 p-2 pr-14 w-full mt-2 ${dropDown ? "rounded-t-3xl" : "rounded-3xl"}` } type="button">Categories <span className="absolute right-5">
-                <i className={`fa-solid fa-angle-${dropDown? "down": "up"}`}></i>
+        <div onClick={handleDropDown} className="w-40 relative">
+            <button className={`relative bg-rose-800 text-rose-200 p-2 pr-14 w-full mt-2 ${dropDown ? "rounded-t-3xl" : "rounded-3xl"}`} type="button">Categories <span className="absolute right-5">
+                <i className={`fa-solid fa-angle-${dropDown ? "down" : "up"}`}></i>
             </span></button>
-            
-            <div className={`${dropDown ? "block" : "hidden"} flex flex-col absolute bg-orange-50 rounded-b-3x w-full `}>
+
+            <div className={`${dropDown ? "block" : "hidden"} flex flex-col absolute  rounded-b-3xl w-full overflow-hidden `}>
                 <ul>
 
                     {listOfCatalogs.map((element, index) => {
@@ -56,13 +56,13 @@ export const CategoriesMenu = () => {
                         return (
                             index == 0 ?
                                 (
-                                    <li>
-                                        <CategoriesButton className="hidden" key={index} type={element.type} title={element.title} />
+                                    <li >
+                                        <CategoriesButton  key={index} type={element.type} title={element.title} />
                                     </li>
                                 ) :
                                 (
-                                    <li>
-                                        <CategoriesButton className="hidden " key={index} type={element.type} title={element.title} />
+                                    <li className="border-t-orange-100 border-t-1 ">
+                                        <CategoriesButton  key={index} type={element.type} title={element.title} />
                                     </li>
                                 )
                         )

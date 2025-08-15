@@ -7,7 +7,7 @@ export const NavBar = () =>{
 
 return (
     <>
-    <nav className="bg-amber-600 flex justify-around">
+    <nav className="bg-amber-600 flex justify-around relative">
         <HomeButton/>
         <Search/>
         <CategoriesMenu/>
