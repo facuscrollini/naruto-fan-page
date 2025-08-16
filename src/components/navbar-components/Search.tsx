@@ -1,11 +1,84 @@
+import { useEffect, useState, type ChangeEventHandler } from "react"
+import { useNaruto } from "../../hooks/useContext/useNaruto"
+import type { CharacterType } from "../../services/apiTypes"
 
 export const Search = () => {
+
+    const [search, setSearch] = useState<string>("")
+    const { store } = useNaruto()
+    const [listFounded, setListFounded] = useState<CharacterType[]>([])
+    const [founded, setFounded] = useState<boolean>(false)
+
+
+    const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+        setSearch(event.target.value)
+    }
+
+
+
+    const searcher = (word: string) => {
+
+        const listCharacters = store.characters ?? []
+        const results = listCharacters?.filter(element => element.name.toLowerCase().includes(word.toLowerCase()))
+        setListFounded(results)
+        setFounded(true)
+    }
+
+    const cleanListFounded = () =>{
+        setSearch("")
+     
+    }
+
+    useEffect(() => {
+        searcher(search)
+        search.trim() == "" && setListFounded([]) && setFounded(false)
+    }, [search])
+
+    useEffect(() => {
+        listFounded.length == 0 && setFounded(false)
+    }, [listFounded])
+
     return (
         <div className="relative my-auto w-100">
             <span className="absolute right-3 top-3 flex items-center pr-1 text-gray-500">
-                <i className="fa fa-search" aria-hidden="true"></i>
+                
+                <i className={`fa fa-${founded ? "xmark" : "search"}`} onClick={()=>{
+                    founded && cleanListFounded()
+                }} aria-hidden="true"></i>
             </span>
-            <input type="text" className="bg-white rounded-full py-2 px-4 pr-10 w-full" placeholder="Search here..."></input>
+
+            <input value={search}
+                onChange={handleChange}
+                type="text"
+                className={` outline-none text-gray-700 rounded-t-3xl ${!founded ? "bg-white rounded-b-3xl" : "bg-gray-100 border-2 border-b-0 border-gray-300"} py-2 px-4 pr-10 w-full`}
+                placeholder="Search here..."
+            />
+            { founded && 
+
+                <div className="absolute w-full rounded-b-3xl overflow-hidden border-2 border-gray-300">
+
+                <div className={` relative w-full flex flex-col ${listFounded.length > 10 ? "h-50" : listFounded.length > 5 ? "h-25" : listFounded.length > 0 && "h-20"}`}>
+                    <ul className="bg-white w-full overflow-y-auto">
+                        {listFounded?.map((character) => {
+                            return (
+                                
+                                <>
+                                    <li className="p-2">
+                                        {character.name}
+                                    </li>
+                                </>
+                            )
+                        })}
+                    </ul>
+                    {listFounded.length > 0 && (
+                        <>
+                            <span className="bg-gray-100 pl-4 text-gray-500  p-2 bottom-0 z-10"><p>{listFounded.length} result{listFounded.length > 1 && "s"} founded</p></span>
+                        </>
+                    )}
+
+                </div>
+            </div>
+            }
         </div>
     )
 }

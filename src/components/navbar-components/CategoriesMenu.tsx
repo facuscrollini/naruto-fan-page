@@ -1,7 +1,11 @@
-import { useState } from "react"
 import { CategoriesButton } from "./CategoriesButton"
 
-export const CategoriesMenu = () => {
+type Props = {
+    dropDown: boolean;
+    setDropDown: (arg1:boolean) => void
+}
+
+export const CategoriesMenu = ({dropDown, setDropDown}:Props) => {
 
     const listOfCatalogs = [
         {
@@ -35,7 +39,6 @@ export const CategoriesMenu = () => {
 
     ]
 
-    const [dropDown, setDropDown] = useState<boolean>(false)
 
     const handleDropDown = () => {
         setDropDown(!dropDown)
@@ -44,11 +47,11 @@ export const CategoriesMenu = () => {
 
     return (
         <div onClick={handleDropDown} className="w-40 relative">
-            <button className={`relative bg-rose-800 text-rose-200 p-2 pr-14 w-full mt-2 ${dropDown ? "rounded-t-3xl" : "rounded-3xl"}`} type="button">Categories <span className="absolute right-5">
+            <button className={`relative bg-rose-800 border-rose-900 border-3 text-rose-200 p-2 pr-14 w-full ${dropDown ? "rounded-t-3xl" : "rounded-3xl"} transition-all duration-200 hover:cursor-pointer hover:bg-rose-700 active:bg-rose-900`} type="button">Categories <span className="absolute right-5">
                 <i className={`fa-solid fa-angle-${dropDown ? "down" : "up"}`}></i>
             </span></button>
 
-            <div className={`${dropDown ? "block" : "hidden"} flex flex-col absolute  rounded-b-3xl w-full overflow-hidden `}>
+            <div className={`${dropDown ? "block" : "hidden"} flex flex-col absolute  rounded-b-3xl w-full overflow-hidden border-x-3 border-b-3 border-orange-200 `}>
                 <ul>
 
                     {listOfCatalogs.map((element, index) => {
@@ -61,7 +64,7 @@ export const CategoriesMenu = () => {
                                     </li>
                                 ) :
                                 (
-                                    <li className="border-t-orange-100 border-t-1 ">
+                                    <li className="border-t-orange-200 border-t-1  ">
                                         <CategoriesButton  key={index} type={element.type} title={element.title} />
                                     </li>
                                 )

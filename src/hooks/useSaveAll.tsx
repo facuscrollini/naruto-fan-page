@@ -10,13 +10,13 @@ export type SaveType = {
 
 export const useSaveAll = (dispatch: Dispatch<ActionType>) =>{
     const listOfSaves:SaveType[] = [
-        {type: "CHARACTERS", count: 1431},
-        {type: "AKATSUKI", count: 44},
-        {type: "VILLAGES", count: 39},
-        {type: "CLANS", count: 58},
-        {type: "TEAMS", count: 191},
-        {type: "TAILED-BEASTS", count: 10},
-        {type: "KEKKEI-GENKAI", count: 39},
+        {type: "characters", count: 1431},
+        {type: "akatsuki", count: 44},
+        {type: "villages", count: 39},
+        {type: "clans", count: 58},
+        {type: "teams", count: 191},
+        {type: "tailed-beasts", count: 10},
+        {type: "kekkei-genkai", count: 39},
     ]
    listOfSaves.forEach(save=> useSave(save.type, save.count, dispatch) )
 }
