@@ -15,6 +15,6 @@ createRoot(document.getElementById('root')!).render(
           <AppRoute />
         </AuthProvider>
       </NarutoStoreProvider>
-    </StrictMode>,
+    </StrictMode>
   </BrowserRouter>
 )

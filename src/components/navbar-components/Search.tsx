@@ -31,18 +31,17 @@ export const Search = () => {
 
     useEffect(() => {
         searcher(search)
-        search.trim() == "" && setListFounded([]) && setFounded(false)
+        search.trim() == "" ? (setListFounded([]), setFounded(false)) : setFounded(true)
+
     }, [search])
 
-    useEffect(() => {
-        listFounded.length == 0 && setFounded(false)
-    }, [listFounded])
+   
 
     return (
         <div className="relative my-auto w-100">
             <span className="absolute right-3 top-3 flex items-center pr-1 text-gray-500">
                 
-                <i className={`fa fa-${founded ? "xmark" : "search"}`} onClick={()=>{
+                <i className={`fa fa-${founded ? "xmark" : "search"}`} title={founded ? "Erase" : "Search"} onClick={()=>{
                     founded && cleanListFounded()
                 }} aria-hidden="true"></i>
             </span>
@@ -50,10 +49,10 @@ export const Search = () => {
             <input value={search}
                 onChange={handleChange}
                 type="text"
-                className={` outline-none text-gray-700 rounded-t-3xl ${!founded ? "bg-white rounded-b-3xl" : "bg-gray-100 border-2 border-b-0 border-gray-300"} py-2 px-4 pr-10 w-full`}
+                className={` outline-none text-gray-700 bg-white rounded-t-3xl ${listFounded.length > 0 ? "" : "rounded-b-3xl"} py-2 px-4 pr-10 w-full`}
                 placeholder="Search here..."
             />
-            { founded && 
+            { listFounded.length > 0 && 
 
                 <div className="absolute w-full rounded-b-3xl overflow-hidden border-2 border-gray-300">
 

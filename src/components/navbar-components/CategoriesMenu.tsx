@@ -5,39 +5,39 @@ type Props = {
     setDropDown: (arg1:boolean) => void
 }
 
+export const listOfCatalogs = [
+    {
+        type: "characters",
+        title: "Characters"
+    },
+    {
+        type: "akatsukis",
+        title: "Akatsukis"
+    },
+    {
+        type: "villages",
+        title: "Villages"
+    },
+    {
+        type: "clans",
+        title: "Clans"
+    },
+    {
+        type: "teams",
+        title: "Teams"
+    },
+    {
+        type: "tailed beasts",
+        title: "Tailed Beasts"
+    },
+    {
+        type: "kekkei genkai",
+        title: "Kekkei Genkai"
+    },
+
+]
 export const CategoriesMenu = ({dropDown, setDropDown}:Props) => {
 
-    const listOfCatalogs = [
-        {
-            type: "characters",
-            title: "Characters"
-        },
-        {
-            type: "akatsukis",
-            title: "Akatsukis"
-        },
-        {
-            type: "villages",
-            title: "Villages"
-        },
-        {
-            type: "clans",
-            title: "Clans"
-        },
-        {
-            type: "teams",
-            title: "Teams"
-        },
-        {
-            type: "tailed beasts",
-            title: "Tailed Beasts"
-        },
-        {
-            type: "kekkei genkai",
-            title: "Kekkei Genkai"
-        },
-
-    ]
 
 
     const handleDropDown = () => {
