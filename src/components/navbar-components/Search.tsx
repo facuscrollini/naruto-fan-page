@@ -30,7 +30,7 @@ export const Search = () => {
     }
 
     useEffect(() => {
-        searcher(search)
+        searcher(search.trim())
         search.trim() == "" ? (setListFounded([]), setFounded(false)) : setFounded(true)
 
     }, [search])
@@ -54,15 +54,15 @@ export const Search = () => {
             />
             { listFounded.length > 0 && 
 
-                <div className="absolute w-full rounded-b-3xl overflow-hidden border-2 border-gray-300">
+                <div className="absolute w-full rounded-b-3xl overflow-hidden border-2 border-gray-300 z-2">
 
-                <div className={` relative w-full flex flex-col ${listFounded.length > 10 ? "h-50" : listFounded.length > 5 ? "h-25" : listFounded.length > 0 && "h-20"}`}>
-                    <ul className="bg-white w-full overflow-y-auto">
+                <div className={` relative w-full flex flex-col `}>
+                    <ul className={`bg-white w-full overflow-y-auto ${listFounded.length > 10 ? "h-50" : listFounded.length > 5 ? "h-30" : listFounded.length > 0 && "h-20"}`}>
                         {listFounded?.map((character) => {
                             return (
                                 
                                 <>
-                                    <li className="p-2">
+                                    <li className="p-2 hover:bg-cyan-100">
                                         {character.name}
                                     </li>
                                 </>

@@ -49,9 +49,9 @@ export const ColumnsFooter = () => {
                      <ul className="mt-3 grid gap-2">
                         <li title="Send us a message" className="hover:underline-offset-4 hover:underline hover:cursor-pointer">Send us a message</li>
                         <div className="flex gap-2">
-                           <li title="Linkedin contact" ><i className="fa-brands fa-linkedin hover:cursor-pointer text-3xl hover:scale-120"></i></li>
-                           <li title="Instagram contact"><i className="fa-brands fa-instagram hover:cursor-pointer text-3xl hover:scale-120"></i></li>
-                           <li title="Email contact"><i className="fa-solid fa-envelope hover:cursor-pointer text-3xl hover:scale-120"></i></li>
+                           <li title="Linkedin contact" ><i className="fa-brands fa-linkedin hover:cursor-pointer text-3xl hover:scale-120 transform transition-transform duration-300"></i></li>
+                           <li title="Instagram contact"><i className="fa-brands fa-instagram hover:cursor-pointer text-3xl hover:scale-120 transform transition-transform duration-300"></i></li>
+                           <li title="Email contact"><i className="fa-solid fa-envelope hover:cursor-pointer text-3xl hover:scale-120 transform transition-transform duration-300"></i></li>
                         </div>
                      </ul>
                   </div>
