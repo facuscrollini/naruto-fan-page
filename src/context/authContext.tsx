@@ -6,20 +6,21 @@ export type Props = {
 }
 
 const initialState = {
-    userName: "",
-    email: "",
-    password: ""
+    userName: undefined,
+    email: undefined,
+    password: undefined
 }
 
 export type UserType = {
-userName:string;
-email: string;
-password:string,
+userName?:string;
+email?: string;
+password?:string,
 }
 
 export type ValueType = {
     user?: UserType,
     catalog?:string,
+    logged: boolean,
     changeCatalog: (type:string)=> void
     login?: (username:string, email:string, password:string) => void,
     logout?: ()=> void
@@ -33,6 +34,7 @@ export const AuthProvider = ({children}:Props) =>{
 
 const [user, setUser] = useState<UserType>(initialState)
 const [catalog, setCatalog] = useState<string>("")
+const [logged, setLogged] = useState<boolean>(false)
 
 const login = (userName:string, email:string, password:string)=>{
 setUser({
@@ -41,6 +43,7 @@ setUser({
    password: password
 
 })
+setLogged(true)
 }
 
 const logout = () =>{
@@ -49,14 +52,15 @@ const logout = () =>{
         email: "",
         password: ""
     })
+    setLogged(false)
 }
 
-const changeCatalog = async(type: string) =>{
-    await setCatalog(type)
+const changeCatalog = (type: string) =>{
+     setCatalog(type)
 }
 
 return(
-<AuthContext.Provider value={{user,catalog, changeCatalog, login, logout}}>
+<AuthContext.Provider value={{user,catalog, logged, changeCatalog, login, logout}}>
     {children}
 </AuthContext.Provider>
     

@@ -51,7 +51,7 @@ export const CategoriesMenu = ({dropDown, setDropDown}:Props) => {
                 <i className={`fa-solid fa-angle-${dropDown ? "down" : "up"}`}></i>
             </span></button>
 
-            <div className={`${dropDown ? "block" : "hidden"} flex flex-col absolute  rounded-b-3xl w-full overflow-hidden border-x-3 border-b-3 border-orange-200 `}>
+            <div className={`${dropDown ? "block" : "hidden"} flex flex-col absolute  rounded-b-3xl w-full overflow-hidden border-x-3 border-b-3 border-orange-200 z-2`}>
                 <ul>
 
                     {listOfCatalogs.map((element, index) => {
