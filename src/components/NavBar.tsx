@@ -14,7 +14,9 @@ return (
         
         <NavBarBackground/>
         <HomeButton dropDown={dropDown} setDropDown={setDropDown}/>
+        <div className="w-1/4">
         <Search/>
+        </div>
         <CategoriesMenu dropDown={dropDown} setDropDown={setDropDown}/>
      </nav>
     </>

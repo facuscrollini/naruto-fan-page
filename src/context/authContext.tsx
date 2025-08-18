@@ -34,7 +34,7 @@ export const AuthProvider = ({children}:Props) =>{
 
 const [user, setUser] = useState<UserType>(initialState)
 const [catalog, setCatalog] = useState<string>("")
-const [logged, setLogged] = useState<boolean>(false)
+const [logged, setLogged] = useState<boolean>(true)
 
 const login = (userName:string, email:string, password:string)=>{
 setUser({

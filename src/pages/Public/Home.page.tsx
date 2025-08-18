@@ -1,4 +1,4 @@
-import { HomeBackground } from "../../components/home-components/HomeBackground"
+import { HomeBackground } from "../../components/home-components/welcome-message-components/HomeBackground"
 import { HomeContent } from "../../components/home-components/HomeContent"
 import { Welcome } from "../../components/home-components/Welcome"
 
@@ -7,7 +7,7 @@ export const Home = () => {
         <>
             <div className="relative py-3">
 
-                <div className="mx-20 ">
+                <div className="m-100vh ">
                     <HomeBackground />
                     <Welcome />
                     <HomeContent />

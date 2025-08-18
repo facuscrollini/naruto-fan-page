@@ -38,7 +38,7 @@ export const Search = () => {
    
 
     return (
-        <div className="relative my-auto w-100">
+        <div className="relative my-auto w-full">
             <span className="absolute right-3 top-3 flex items-center pr-1 text-gray-500">
                 
                 <i className={`fa fa-${founded ? "xmark" : "search"}`} title={founded ? "Erase" : "Search"} onClick={()=>{
