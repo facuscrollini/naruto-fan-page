@@ -5,13 +5,10 @@ import { Welcome } from "../../components/home-components/Welcome"
 export const Home = () => {
     return (
         <>
-            <div className="relative py-3">
-
-                <div className="m-100vh ">
+            <div className="relative">
                     <HomeBackground />
                     <Welcome />
                     <HomeContent />
-                </div>
             </div>
         </>
     )
