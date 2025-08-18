@@ -2,7 +2,7 @@ import { CategoriesMenu } from "./navbar-components/CategoriesMenu"
 import { Search } from "./navbar-components/Search"
 import { HomeButton } from "./navbar-components/HomeButton"
 import { useState } from "react"
-import { NavBarBackground } from "./NavBarBackground"
+import { NavBarBackground } from "./navbar-components/NavBarBackground"
 
 export const NavBar = () => {
 

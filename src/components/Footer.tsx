@@ -9,7 +9,7 @@ export const Footer = () => {
 
    return (
       <>
-         <div className="min-h-100 flex flex-col relative">
+         <div className="flex flex-col relative">
             <div className="flex-1 z-1 text-white">
                <ColumnsFooter />
             </div>

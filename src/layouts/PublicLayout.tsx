@@ -9,11 +9,11 @@ import { Outlet } from 'react-router'
 function PublicLayout() {
 
   return (
-    <>
+    <div className="relative">
     {/* <NavBar/> */}
     <Outlet/>
     <Footer/>
-    </>
+    </div>
   )
 }
 
