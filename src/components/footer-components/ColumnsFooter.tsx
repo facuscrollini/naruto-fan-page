@@ -34,13 +34,13 @@ export const ColumnsFooter = () => {
                         Categories
                      </span>
                      <ul className="mt-4 grid gap-2" >
-                        {listOfCatalogs.map((catalog) => {
+                        {listOfCatalogs.map((catalog,index) => {
                            return (
-                              <>
+                              < div key={index}>
                               <Link to={`${logged? "/auth/catalog": "/" }`}>
                                  <li><button onClick={()=>seeCategory(changeCatalog, catalog.type)} title={logged ? `See the ${catalog.type} catalog` : `Get in your account to see the ${catalog.type} catalog`} className={` ${logged ?`hover:underline-offset-4 hover:underline hover:cursor-pointer ` : "opacity-30"}`} disabled={!logged}>{catalog.title}</button></li>
                               </Link>
-                              </>
+                              </div>
                            )
                         })}
                      </ul>
