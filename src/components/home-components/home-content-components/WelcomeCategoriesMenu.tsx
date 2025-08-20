@@ -3,51 +3,65 @@ import { useAuth } from "../../../hooks/useContext/useAuth"
 import { listOfCatalogs } from "../../navbar-components/CategoriesMenu"
 export const WelcomeCategoriesMenu = () => {
 
-  const { catalog, changeCatalog } = useAuth()
+  const { changeCatalog } = useAuth()
   const [position, setPosition] = useState<number>(3)
   const [carrousel, setCarrousel] = useState(listOfCatalogs.slice(2, 5))
 
-  const swtichCatalog = (type: string, index: number) => {
-    catalog == type ? changeCatalog("") : changeCatalog(type)
-    position == index ? setPosition(4) : setPosition(index)
+
+
+
+
+  const decreasePosition = () => {
+    setPosition(prev => prev > 0 ? prev - 1 : 6)
+    changeCatalog(carrousel[0].type)
   }
 
-  const showTheIndex = (index: number) => {
-    console.log(index)
+  const increasePosition = () => {
+    setPosition(prev => prev < 6 ? prev + 1 : 0)
+    changeCatalog(carrousel[2].type)
   }
 
-  const decreasePosition = () =>{
-    setPosition(prev => position > 0 ? prev - 1 : 6)
-  }
-
-  const increasePosition = () =>{
-    setPosition(prev => position < 6 ? prev + 1 : 0)
+  const switchPosition = (index: number) => {
+    index == 0 ? decreasePosition() : index == 2 && increasePosition()
   }
 
 
   useEffect(() => {
-    position < 7 && changeCatalog(listOfCatalogs[position].type)
     position == 6 ? setCarrousel([...listOfCatalogs.slice(-2), ...listOfCatalogs.slice(0, 1)]) : position == 0 ? setCarrousel([...listOfCatalogs.slice(-1), ...listOfCatalogs.slice(0, 2)]) : setCarrousel(listOfCatalogs.slice(position - 1, position + 2))
-    console.log("position desde el useEffect es " + position)
   }, [position])
+
+  useEffect(() => {
+    changeCatalog("clans")
+
+  }, [])
+
 
 
 
 
   return (
-    <div className=" text-center">
-      <div className="bg-gray-900 p-3 rounded-3xl sm:h-20  ">
+    <>
+      <div className="bg-gray-800 sm:px-0 not-sm:h-45 not-sm:flex not-sm:justify-start items-center  px-3 py-3 mb-5 rounded-lg sm:rounded-full  ">
 
-        <div className="grid 2xl:grid-cols-7 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 my-2">
+        <div className="grid grid-cols-1 w-full sm:grid-cols-3 md:grid-cols-5 ">
 
           {
             carrousel.map((element, index) => (
-              <div key={index} className={`relative transform  transition-all duration-500 ${index == 1 ? "md:scale-150 scale-110 md:translate-y-4 z-10" : "z-0"}`}>
-                <button onClick={() => {
-                 swtichCatalog(element.type, index)
-                 index == 0 ? setPosition(prev => prev + 1) : index > 1 && setPosition(prev => prev -1) 
-                }
-                } className={`bg-gray-400 rounded-lg py-0 px-3 w-full min-h-10 sm:min-w-50`}>{element.title}</button>
+              <div className={`flex not-sm:my-2 w-full sm:col-span-1 sm:justify-center ${index == 0 ? "sm:justify-end sm:ml-3 sm:mr-0 md:col-start-2 md:col-end-3" : index == 1 ? "sm:justify-center md:col-start-3 md:col-end-4" : "sm:justify-start sm:mr-3 sm:ml-0 md:col-start-4 md:col-end-5"}`}>
+
+                <div key={index} className={`not-sm:w-full relative border-2 border-gray-500 rounded-lg bg-gray-300 w-fit  text-gray-500  transform  transition-all duration-500 ${index == 1 ? "sm:scale-150 sm:translate-y-4 z-5 brigthness-100" : " brightness-50 z-0"}`}>
+                  <button onClick={() => {
+                    switchPosition(index)
+                  }
+                  } className={`not-sm:text-[1.5vh] py-0 px-3 w-full min-h-10 sm:min-w-50`}>{element.title}</button>
+                  <div className="absolute top-0 left-1 text-[0.9vh]">o</div>
+                  <div className="absolute top-1/2 -translate-y-1/2 left-1 text-[0.9vh]">o</div>
+                  <div className="absolute bottom-0 left-1 text-[0.9vh]">o</div>
+
+                  <div className="absolute top-0 right-1 text-[0.9vh]">o</div>
+                  <div className="absolute top-1/2 -translate-y-1/2 right-1 text-[0.9vh]">o</div>
+                  <div className="absolute bottom-0 right-1 text-[0.9vh]">o</div>
+                </div>
               </div>
 
             ))
@@ -57,10 +71,13 @@ export const WelcomeCategoriesMenu = () => {
         </div>
       </div>
 
+      <div className="flex justify-center not-sm:hidden">
 
-      <button onClick={() => decreasePosition()} className="mr-2 hover:cursor-pointer hover:text-gray-900 text-gray-600 hover:scale-130 text-3xl transform transition-all duration-200"><i className="fa-solid fa-angle-left"></i></button>
-      <button onClick={() => decreasePosition()} className="ml-2 hover:cursor-pointer hover:text-gray-900 text-gray-600 hover:scale-130 text-3xl transform transition-all duration-200"><i className="fa-solid fa-angle-right"></i></button>
-    </div>
+        <button onClick={() => decreasePosition()} className="mr-2 hover:cursor-pointer hover:text-gray-900 text-gray-600 hover:scale-130 text-3xl transform transition-all duration-200"><i className="fa-solid fa-angle-left"></i></button>
+        <button onClick={() => increasePosition()} className="ml-2 hover:cursor-pointer hover:text-gray-900 text-gray-600 hover:scale-130 text-3xl transform transition-all duration-200"><i className="fa-solid fa-angle-right"></i></button>
+      </div>
+
+    </>
 
 
   )

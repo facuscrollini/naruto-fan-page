@@ -54,7 +54,7 @@ export const Search = () => {
             />
             { listFounded.length > 0 && 
 
-                <div className="absolute w-full rounded-b-3xl overflow-hidden border-2 border-gray-300 z-2">
+                <div className="absolute w-full rounded-b-3xl overflow-hidden border-2 border-gray-300 z-10">
 
                 <div className={` relative w-full flex flex-col `}>
                     <ul className={`bg-white w-full overflow-y-auto ${listFounded.length > 10 ? "h-50" : listFounded.length > 5 ? "h-30" : listFounded.length > 0 && "h-20"}`}>
