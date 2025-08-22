@@ -4,11 +4,9 @@ import { HomeBackground } from "./welcome-message-components/HomeBackground"
 
 export const HomeContent = () => {
   return (
-    <div className="relative pt-3 h-fit  lg:px-[10vh] 2xl:px-[30vh]">
+    <div className="relative pt-3 h-fit">
       <HomeBackground />
-      <div className="h-fu bg-blue-600">
-      </div>
-      <div className="relative">
+      <div className="relative flex justify-center w-full lg:w-[50vh] md:w-[60vh]">
         <HomeSearcher />
         <WelcomeCategories />
       </div>
