@@ -41,15 +41,15 @@ export const WelcomeCategoriesMenu = () => {
 
   return (
     <>
-      <div className="bg-gray-800 sm:px-0 not-sm:h-45 not-sm:flex not-sm:justify-start items-center  px-3 py-3 mb-5 rounded-lg sm:rounded-full  ">
+      <div className="sm:bg-blue-950 bg-blue-950/85 sm:px-0 sm:pt-2 lg:pt-4  max-sm:h-full not-sm:flex not-sm:justify-start items-center  px-6 mb-5 rounded-lg sm:rounded-full  ">
 
         <div className="grid grid-cols-1 w-full sm:grid-cols-3 md:grid-cols-5 ">
 
           {
             carrousel.map((element, index) => (
-              <div className={`flex not-sm:my-2 w-full sm:col-span-1 sm:justify-center ${index == 0 ? "sm:justify-end sm:ml-3 sm:mr-0 md:col-start-2 md:col-end-3" : index == 1 ? "sm:justify-center md:col-start-3 md:col-end-4" : "sm:justify-start sm:mr-3 sm:ml-0 md:col-start-4 md:col-end-5"}`}>
+              <div className={`flex not-sm:my-2 w-full sm:col-span-1 sm:justify-center ${index == 0 ? "sm:justify-end sm:translate-x-[5vh] md:translate-x-0 sm:ml-3 sm:mr-0 md:col-start-2 md:col-end-3" : index == 1 ? "sm:justify-center md:col-start-3 md:col-end-4" : "sm:justify-start sm:-translate-x-[5vh] md:translate-x-0  sm:mr-3 sm:ml-0 md:col-start-4 md:col-end-5"}`}>
 
-                <div key={index} className={`not-sm:w-full relative border-2 border-gray-500 rounded-lg bg-gray-300 w-fit  text-gray-500  transform  transition-all duration-500 ${index == 1 ? "sm:scale-150 sm:translate-y-4 z-5 brigthness-100" : " brightness-50 z-0"}`}>
+                <div key={index} className={`not-sm:w-full relative border-2 border-gray-500 rounded-lg bg-gray-300 w-fit  text-gray-500  transform  transition-all duration-500 ${index == 1 ? "scale-120 sm:scale-140 md:scale-150 sm:translate-y-4 z-5 brigthness-100" : " brightness-50 z-0"}`}>
                   <button onClick={() => {
                     switchPosition(index)
                   }

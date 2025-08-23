@@ -6,7 +6,7 @@ export const HomeContent = () => {
   return (
     <div className="relative pt-3 h-fit">
       <HomeBackground />
-      <div className="relative flex justify-center w-full lg:w-[50vh] md:w-[60vh]">
+      <div className="relative mx-auto w-full sm:w-[540px] md:w-[768px] lg:w-[960px] xl:w-[1140px]">
         <HomeSearcher />
         <WelcomeCategories />
       </div>

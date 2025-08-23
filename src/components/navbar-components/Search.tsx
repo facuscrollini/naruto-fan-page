@@ -38,23 +38,23 @@ export const Search = () => {
    
 
     return (
-        <div className="relative my-auto w-full">
-            <span className="absolute right-3 top-3 flex items-center pr-1 text-gray-500">
+        <div className="relative  h-full m-auto w-3/4 text-2xl">
+            <button type="button" className="hover:cursor-pointer absolute top-1/2  right-3 -translate-y-1/2 flex items-center pr-1 text-gray-500">
                 
                 <i className={`fa fa-${founded ? "xmark" : "search"}`} title={founded ? "Erase" : "Search"} onClick={()=>{
                     founded && cleanListFounded()
                 }} aria-hidden="true"></i>
-            </span>
+            </button>
 
             <input value={search}
                 onChange={handleChange}
                 type="text"
-                className={` outline-none text-gray-700 bg-white rounded-t-3xl ${listFounded.length > 0 ? "" : "rounded-b-3xl"} py-2 px-4 pr-10 w-full`}
+                className={`h-full outline-none text-gray-700 bg-white  ${listFounded.length > 0 ? "rounded-t-4xl" : "rounded-full"} py-2 px-4 pr-10 w-full`}
                 placeholder="Search here..."
             />
             { listFounded.length > 0 && 
 
-                <div className="absolute w-full rounded-b-3xl overflow-hidden border-2 border-gray-300 z-10">
+                <div className="absolute w-full rounded-b-3xl border-t-1 border-gray-200 overflow-hidden  z-10">
 
                 <div className={` relative w-full flex flex-col `}>
                     <ul className={`bg-white w-full overflow-y-auto ${listFounded.length > 10 ? "h-50" : listFounded.length > 5 ? "h-30" : listFounded.length > 0 && "h-20"}`}>

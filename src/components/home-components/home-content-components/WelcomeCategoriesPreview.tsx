@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../../../hooks/useContext/useAuth"
 import { listOfCatalogs } from "../../navbar-components/CategoriesMenu"
+import { PreviewImage } from "./preview-components/PreviewImage"
+import { PreviewText } from "./preview-components/PreviewText"
 
 interface PreviewDataType {
   type?: string,
@@ -28,20 +30,16 @@ export const WelcomeCategoriesPreview = () => {
 
 
   return (
-    <div className="bg-amber-200 m-3 rounded-2xl overflow-hidden">
-      <div className="relative h-[70vh] group">
-        <img className="w-full h-full transition-all duration-1000 group-hover:grayscale-50 object-cover object-bottom" src={`../../../../public/img/${previewData?.type == "kekkei genkai" ? previewData?.type + ".jpg" : previewData?.type + ".png"}`} />
-        <div className="absolute  transition-all opacity-0 group-hover:opacity-100 bg-linear-to-t from-black to-transparent duration-1000  inset-0">
-          <div className="absolute left-1/16 right-1/16 bottom-0 group-hover:bottom-1/8 opacity-0 transition-all duration-1000 group-hover:opacity-90 text-white text-left">
-          <div className="flex justify-between">
 
-          <p className="text-left mb-2 text-[10vh]">{previewData?.title}</p>
-          <p>Perros</p>
-          </div>
-          {previewData?.description}
-          </div>
+    <div className="h-[50vh] rounded-2xl overflow-hidden">
+      <label className="relative group hover:cursor-pointer">
+        <input type="checkbox" className="peer" hidden></input>
+        <PreviewImage type={previewData?.type} />
+        <div className="absolute max-lg:peer-checked:opacity-100 sm:opacity-0 group-hover:opacity-100 bg-linear-to-t from-black to-transparent transition-all duration-1000  inset-0"></div>
+        <div className="absolute left-1/16 right-1/16 max-lg:peer-checked:opacity-100 bottom-1/8 lg:bottom-0 group-hover:bottom-1/8 sm:opacity-0 transition-all duration-1000 group-hover:opacity-90 text-white text-left">
+        <PreviewText title={previewData?.title} description={previewData?.description} />
         </div>
-      </div>
+      </label>
     </div>
   )
 }
