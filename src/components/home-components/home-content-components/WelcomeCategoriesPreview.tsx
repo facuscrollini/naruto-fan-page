@@ -30,7 +30,6 @@ export const WelcomeCategoriesPreview = () => {
 
 
   return (
-
     <div className="h-[50vh] rounded-2xl overflow-hidden">
       <label className="relative group hover:cursor-pointer">
         <input type="checkbox" className="peer" hidden></input>
