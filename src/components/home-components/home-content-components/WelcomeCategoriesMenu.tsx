@@ -41,7 +41,7 @@ export const WelcomeCategoriesMenu = () => {
 
   return (
     <>
-      <div className="sm:bg-blue-950 bg-blue-950/85 sm:px-0 sm:pt-2 lg:pt-4  max-sm:h-full not-sm:flex not-sm:justify-start items-center  px-6 mb-5 rounded-lg sm:rounded-full  ">
+      <div className="sm:bg-blue-950 bg-blue-950/85 sm:px-0 px-[1vh] sm:pt-[2vh] lg:pt-[2.5vh] lg  max-sm:h-full not-sm:flex not-sm:justify-start items-center   mb-5 rounded-lg sm:rounded-full  ">
 
         <div className="grid grid-cols-1 w-full sm:grid-cols-3 md:grid-cols-5 ">
 
