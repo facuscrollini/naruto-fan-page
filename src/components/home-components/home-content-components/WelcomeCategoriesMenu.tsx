@@ -32,7 +32,6 @@ export const WelcomeCategoriesMenu = () => {
 
   useEffect(() => {
     changeCatalog("clans")
-
   }, [])
 
 

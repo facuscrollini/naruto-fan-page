@@ -14,7 +14,7 @@ const {warningModal, setWarningModal} = useAuth()
        <WarningModalContent/>
     </div>
     
-    <div onClick={()=> setWarningModal(false)} className="absolute inset-0 z-290 bg-gray-900/50 "></div>
+    <div onClick={()=> setWarningModal(false)} className="absolute inset-0 z-290 bg-gray-900/75 "></div>
     </div>
   )
 }

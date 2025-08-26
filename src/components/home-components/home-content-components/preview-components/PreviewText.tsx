@@ -11,14 +11,31 @@ interface Props {
 export const PreviewText = ({ title, description, type }: Props) => {
 
 const nav = useNavigate()
-const {changeCatalog, user, setWarningModal, warningModal} = useAuth()
+const {changeCatalog, user, setWarningModal} = useAuth()
+
+const halfHeight = (document.documentElement.scrollHeight - window.innerHeight) / 2
+
+
+
 
 
 const handleClick = () =>{
-  // user?.userName? console.log("Si hay usuario") : console.log("No hay usuario")
-  setWarningModal(!warningModal)
-// changeCatalog(type!)
-// nav("/auth/catalog")
+ if(user?.userName){
+changeCatalog(type!)
+nav("/auth/catalog")
+ }
+ else{
+
+   window.scrollTo({
+   top: halfHeight,
+   left:0,
+   behavior: "smooth"
+   })
+
+   
+ setWarningModal(true)
+
+ }
 }
 
   return (
