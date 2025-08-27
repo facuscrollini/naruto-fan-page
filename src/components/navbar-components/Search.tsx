@@ -27,7 +27,7 @@ export const Search = () => {
     const { store } = useNaruto()
     const [listFounded, setListFounded] = useState<FoundedItem[]>([])
     const [founded, setFounded] = useState<boolean>(false)
-    let count = 0
+    let elementsFounded = 0
 
 
     const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -89,8 +89,8 @@ export const Search = () => {
                 <input value={search}
                     onChange={handleChange}
                     type="text"
-                    className={`h-full outline-none text-gray-700   py-2 px-4 pr-10 w-full`}
-                    placeholder="Search here..."
+                    className={`h-full outline-none text-gray-700   py-2 px-4 pr-10 w-full max-md:text-[1.5vh]`}
+                    placeholder="Find your character, clan, village, team, etc..."
                 />
 
             </div>
@@ -106,12 +106,12 @@ export const Search = () => {
                         <ul className={`bg-white w-full overflow-y-auto ${listFounded.length > 10 ? "h-50" : listFounded.length > 5 ? "h-30" : listFounded.length > 0 && "h-20"}`}>
                             {listFounded?.map((character) => {
                                 const catalogMatch = listOfCatalogs.find(catalog => catalog.title == character.name)
-                                if (!catalogMatch) count++
+                                if (!catalogMatch) elementsFounded++
                                 return (
 
                                     <>
                                         {catalogMatch ?
-                                            <li className="text-center bg-gray-200 mb-2 py-1 text-gray-600">{character.name}</li>
+                                            <li className="text-center bg-gray-200 mb-2 py-1 text-gray-400 text-bold rounded-b-xl">{character.name}</li>
                                             :
                                             <li className="p-2 hover:bg-cyan-100">
                                                 {character.name}
@@ -124,7 +124,7 @@ export const Search = () => {
                         </ul>
                         {listFounded.length > 0 && (
                             <>
-                                <span className="bg-gray-100 pl-4 text-gray-500  p-2 bottom-0 z-10"><p>{count} total element{listFounded.length > 1 && "'s"} founded</p></span>
+                                <span className="bg-gray-100 pl-4 text-gray-500  p-2 bottom-0 z-10"><p>{elementsFounded} total element{listFounded.length > 1 && "'s"} founded</p></span>
                             </>
                         )}
 

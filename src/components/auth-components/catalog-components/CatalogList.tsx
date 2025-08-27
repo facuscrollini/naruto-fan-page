@@ -1,4 +1,4 @@
-import { useAuth } from "../../hooks/useContext/useAuth"
+import { useAuth } from "../../../hooks/useContext/useAuth"
 
 export const CatalogList = () =>{
 

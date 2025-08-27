@@ -10,10 +10,10 @@ export const ColumnsFooter = () => {
 
   return (
    <>
-   <div className="grid grid-cols-3 text-center mt-5 mx-50 rounded-3xl bg-black/50 pl-10 py-4">
+   <div className="grid grid-cols-3 max-sm:grid-cols-2 text-center mt-5 max-sm:mx-[3vh] sm:mx-[5vh]  md:mx-[6vh] lg:mx-[8vh] xl:mx-[10vh] 2xl:mx-[40vh] rounded-3xl bg-black/50 pl-10 py-4">
 
                   <div className="text-left">
-                     <span className="text-2xl opacity-70 font-bold" >User</span>
+                     <span className="text-center text-2xl opacity-70 font-bold" >User</span>
                      <ul className="mt-4 grid gap-2 ">
                         <Link to={`${!logged ? "/auth/login" : "/"}`}>
                         <li><button title={`${!logged ? "Log in on your account" : "Please logout to access this"}`} className={`${!logged ? `hover:underline-offset-4 hover:underline hover:cursor-pointer` : "select-none opacity-30" }  `} disabled={logged}>Login</button></li>
