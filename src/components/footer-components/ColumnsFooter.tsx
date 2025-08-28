@@ -10,7 +10,7 @@ export const ColumnsFooter = () => {
 
   return (
    <>
-   <div className="grid grid-cols-3 max-sm:grid-cols-2 text-center mt-5 max-sm:mx-[3vh] sm:mx-[5vh]  md:mx-[6vh] lg:mx-[8vh] xl:mx-[10vh] 2xl:mx-[40vh] rounded-3xl bg-black/50 pl-10 py-4">
+   <div className="grid grid-cols-3 max-md:grid-cols-2 text-center mt-5 max-sm:mx-[3vh] sm:mx-[5vh]  md:mx-[6vh] lg:mx-[8vh] xl:mx-[10vh] 2xl:mx-[40vh] rounded-3xl bg-black/50 pl-10 py-4">
 
                   <div className="text-left">
                      <span className="text-center text-2xl opacity-70 font-bold" >User</span>

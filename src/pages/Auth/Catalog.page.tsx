@@ -1,20 +1,25 @@
-import { CatalogIndividual } from "../../components/auth-components/catalog-components/CatalogIndividual"
-import { CatalogList } from "../../components/auth-components/catalog-components/CatalogList"
-import { CatalogTitle } from "../../components/auth-components/catalog-components/CatalogTitle"
-
+import { useEffect } from "react"
+import { CatalogBody } from "../../components/auth-components/catalog-components/CatalogBody"
+import { CatalogHeader } from "../../components/auth-components/catalog-components/CatalogHeader"
+import { useAuth } from "../../hooks/useContext/useAuth"
+import { useNavigate } from "react-router"
 
 
 
 export const Catalog = () =>{
 
+const {catalog} = useAuth()
+const nav = useNavigate()
 
 
+useEffect(()=>{
+    catalog?.trim() == "" && nav("/") 
+},[])
 
     return (
-        <>
-        <CatalogTitle />
-        <CatalogList/>
-        <CatalogIndividual/>
-        </>
+        <div className="h-[57.6vh]">
+        <CatalogHeader/>
+        <CatalogBody/>
+        </div>
     )
 }

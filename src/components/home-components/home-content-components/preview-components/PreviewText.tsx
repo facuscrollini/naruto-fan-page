@@ -11,7 +11,7 @@ interface Props {
 export const PreviewText = ({ title, description, type }: Props) => {
 
 const nav = useNavigate()
-const {changeCatalog, user, setWarningModal} = useAuth()
+const {changeCatalog, setWarningModal, logged} = useAuth()
 
 const halfHeight = (document.documentElement.scrollHeight - window.innerHeight) / 2
 
@@ -20,7 +20,7 @@ const halfHeight = (document.documentElement.scrollHeight - window.innerHeight) 
 
 
 const handleClick = () =>{
- if(user?.userName){
+ if(logged){
 changeCatalog(type!)
 nav("/auth/catalog")
  }

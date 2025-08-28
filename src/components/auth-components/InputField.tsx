@@ -6,6 +6,6 @@ type Props = {
 
 export const InputField = ({name, type}:Props) => {
   return (
-   <input id={name} name={name} type={type} className="border-2 rounded-sm focus:border-0 border-blue-300"></input>
+   <input id={name} name={name} type={type} className="border-2 rounded-sm focus:border-0 border-blue-300 w-full"></input>
   )
 }

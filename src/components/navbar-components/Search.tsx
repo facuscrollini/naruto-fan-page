@@ -75,7 +75,7 @@ export const Search = () => {
 
 
     return (
-        <div className="relative h-full m-auto w-3/4 text-2xl ">
+        <div className="relative h-full m-auto w-3/4  text-[1.5vh]">
 
             <div className={`relative h-full px-5 bg-zinc-50 ${listFounded.length > 0 ? "rounded-t-4xl" : "rounded-full"}`}>
 
@@ -89,7 +89,7 @@ export const Search = () => {
                 <input value={search}
                     onChange={handleChange}
                     type="text"
-                    className={`h-full outline-none text-gray-700   py-2 px-4 pr-10 w-full max-md:text-[1.5vh]`}
+                    className={`h-full outline-none text-gray-700   py-2 px-4 pr-10 w-full `}
                     placeholder="Find your character, clan, village, team, etc..."
                 />
 
@@ -100,7 +100,7 @@ export const Search = () => {
 
 
 
-                <div className="absolute w-full rounded-b-3xl border-t-1 border-gray-200 overflow-hidden  z-10">
+                <div className="absolute w-full rounded-b-3xl border-t-1 border-gray-200 overflow-hidden z-10  ">
 
                     <div className={` relative w-full flex flex-col `}>
                         <ul className={`bg-white w-full overflow-y-auto ${listFounded.length > 10 ? "h-50" : listFounded.length > 5 ? "h-30" : listFounded.length > 0 && "h-20"}`}>
