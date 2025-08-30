@@ -19,7 +19,7 @@ export const CatalogList = () => {
     return (
 
         <div className="bg-gray-200 col-span-3  rounded-xl p-2">
-            <div className="flex justify-center">
+            <div className="flex justify-center gap-2">
 
                 <CatalogSearch openMenu={openMenu} setOpenMenu={setOpenMenu} />
                 <Filter  openMenu={openMenu} setOpenMenu={setOpenMenu}  />

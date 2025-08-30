@@ -15,13 +15,19 @@ export const Organize = ({ openMenu, setOpenMenu }: CatalogMenuType) => {
   })
 
   return (
-   <div className={`${thisMenu && "flex-grow"} transition-all duration-1000 flex bg-amber-300`}>
-      <div className={`transition-all duration-1000 flex ${thisMenu ? "justify-between w-full" : " justify-end w-full"}`}>
-      
-      <p className={`transition-all duration-100 overflow-hidden ${thisMenu ? "max-w-full opacity-100" : "max-w-0 hidden"}`}>Organize</p>
-      <button type="button" onClick={handleClick} title="Customize your list" className="text-end hover:cursor-pointer  bg-gray-300 rounded-sm">
-        <i className="fa-solid fa-table-cells"></i>
-      </button>
+   
+  <div className={` ${thisMenu ? "flex-grow min-w-[1vw]" : "w-[1vw]"} transition-all duration-1000 `}>
+      <div className={`relative overflow-hidden w-full  rounded-lg h-full bg-gray-100 transition-all duration-1000`} >
+        <p className={`${thisMenu ? "block w-full text-center" : "hidden"} transition-all duration-1000`}
+        >Organize</p>
+       
+        <button type="button"
+          title="Customize your list"
+          className="hover:cursor-pointer absolute z-1 w-[1vw] h-full bg-pink-400 top-0 right-0  hover:scale-120 transition-all duration-500"
+          onClick={handleClick}
+        >
+          <i className="fa-solid fa-table-cells-large"></i>
+        </button>
       </div>
     </div>
   )
