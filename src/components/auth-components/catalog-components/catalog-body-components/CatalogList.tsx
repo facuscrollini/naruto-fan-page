@@ -12,10 +12,11 @@ export const CatalogList = () => {
 
     const { catalog } = useAuth()
 
+    
 
     return (
 
-        <div className="bg-gray-200 col-span-3  rounded-xl p-2">
+        <div className="bg-gray-200 max-lg:hidden lg:col-span-3  rounded-xl p-2">
             <CatalogListHeader/>
             <CatalogListBody/>
         </div>
