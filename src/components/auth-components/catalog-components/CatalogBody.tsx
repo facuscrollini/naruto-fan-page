@@ -1,5 +1,5 @@
 import { CatalogIndividual } from "./CatalogIndividual"
-import { CatalogList } from "./CatalogList"
+import { CatalogList } from "../catalog-components/catalog-body-components/CatalogList"
 
 export const CatalogBody = () => {
 

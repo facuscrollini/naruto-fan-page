@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import type { NarutoStoreType } from "./narutoContext";
 
 
 export type Props = {
@@ -19,11 +20,11 @@ export type UserType = {
 
 export type ValueType = {
     user?: UserType,
-    catalog?: string,
+    catalog?: keyof NarutoStoreType,
     logged: boolean,
     warningModal: boolean,
     setWarningModal: (type:boolean) => void,
-    changeCatalog: (type: string) => void,
+    changeCatalog: (type: keyof NarutoStoreType) => void,
     login?: (username: string, email: string, password: string) => void,
     logout?: () => void
 }
@@ -35,7 +36,7 @@ export const AuthContext = createContext<ValueType | undefined>(undefined)
 export const AuthProvider = ({ children }: Props) => {
 
     const [user, setUser] = useState<UserType>(initialState)
-    const [catalog, setCatalog] = useState<string>("")
+    const [catalog, setCatalog] = useState<keyof NarutoStoreType>("clans")
     const [logged, setLogged] = useState<boolean>(true)
     const [warningModal, setWarningModal] = useState<boolean>(false)
 
@@ -58,7 +59,7 @@ export const AuthProvider = ({ children }: Props) => {
         setLogged(false)
     }
 
-    const changeCatalog = (type: string) => {
+    const changeCatalog = (type: keyof NarutoStoreType) => {
         setCatalog(type)
     }
 

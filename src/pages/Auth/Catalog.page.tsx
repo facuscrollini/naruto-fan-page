@@ -17,7 +17,7 @@ useEffect(()=>{
 },[])
 
     return (
-        <div className="h-[57.6vh]">
+        <div className="lg:w-[110rem] mx-auto h-fit mb-[4vh]">
         <CatalogHeader/>
         <CatalogBody/>
         </div>

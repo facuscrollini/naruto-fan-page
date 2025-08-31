@@ -18,14 +18,14 @@ export const useNarutoReducer = (state: NarutoStoreType, action: ActionType) =>{
 
         case "SAVE_TAILED_BEASTS":
 
-            return {...state, tailed_beasts: action.payload}
+            return {...state, "tailed-beasts": action.payload}
 
         case "SAVE_AKATSUKI":
             
             return {...state, akatsuki: action.payload};
         case "SAVE_KEKKEI_GENKAI":
             
-            return {...state, kekkei_genkais: action.payload};
+            return {...state, "kekkei-genkai": action.payload};
         case "SAVE_VILLAGES":
             
             return {...state, villages: action.payload};

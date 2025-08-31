@@ -6,12 +6,12 @@ import { useNarutoReducer, type ActionType } from "../hooks/reducer/useNarutoRed
 
 export type NarutoStoreType = {
   villages?: SimpleGroupType[];
-  kekkei_genkai?: SimpleGroupType[];
+  "kekkei-genkai"?: SimpleGroupType[];
   teams?: SimpleGroupType[];
   clans?: SimpleGroupType[];
   characters?: CharacterType[];
   akatsuki?: AkatsukiType[];
-  tailed_beasts?: TailedBeastType[]
+  "tailed-beasts"?: TailedBeastType[]
 };
 
 const initialStore = { characters: [], villages: [], kekkei_genkai: [], teams: [], clans: [], akatsuki: [], tailed_beasts: []  }

@@ -1,6 +1,5 @@
 import { useEffect, useState, type ChangeEventHandler } from "react"
 import { useNaruto } from "../../hooks/useContext/useNaruto"
-import type { CharacterType } from "../../services/apiTypes"
 import { listOfCatalogs } from "./CategoriesMenu"
 import type { NarutoStoreType } from "../../context/narutoContext"
 

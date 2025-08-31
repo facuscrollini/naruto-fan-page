@@ -1,3 +1,4 @@
+import type { NarutoStoreType } from "../../context/narutoContext";
 import { CategoriesButton } from "./CategoriesButton"
 
 type Props = {
@@ -5,7 +6,14 @@ type Props = {
     setDropDown: (arg1:boolean) => void
 }
 
-export const listOfCatalogs = [
+type ListOfCatalogsType = {
+    type: keyof NarutoStoreType,
+    title: string,
+    image: string,
+    description:string
+}
+
+export const listOfCatalogs: ListOfCatalogsType[] = [
     {
         type: "characters",
         title: "Characters",
@@ -13,8 +21,8 @@ export const listOfCatalogs = [
         description: "Ninjas rise above limits, carrying dreams, rivalries, and burdens. Some seek to become village leaders, others struggle with vengeance and redemption. Healers, warriors, and tacticians all leave unforgettable marks on this world."
     },
     {
-        type: "akatsukis",
-        title: "Akatsukis",
+        type: "akatsuki",
+        title: "Akatsuki",
         image: "",
         description: "A secretive group operates in the shadows, pursuing power and shaping the balance of the world. Their motives are mysterious, their presence feared, and their actions often bring chaos and challenge to every village."
     },
@@ -37,13 +45,13 @@ export const listOfCatalogs = [
         description: "From small squads of ninjas to elite units and tactical groups, teams form to achieve missions, protect villages, or pursue larger goals. Collaboration, strategy, and loyalty define their success, while rivalries and conflicts test their strength."
     },
     {
-        type: "tailed beasts",
+        type: "tailed-beasts",
         title: "Tailed Beasts",
         image: "https://narutoversity.wordpress.com/wp-content/uploads/2015/07/young-tailed-beasts-1.png",
         description: "Immense creatures wield incredible power, influencing villages, warriors, and wars. Uncovering their secrets is a challenge only the bravest dare to face."
     },
     {
-        type: "kekkei genkai",
+        type: "kekkei-genkai",
         title: "Kekkei Genkai",
         image:"https://i.redd.it/s7t1tlk47okb1.jpg",
         description: "Rare powers run in certain families, from extraordinary vision and perception to controlling natural elements. These abilities define the path and destiny of their inheritors."

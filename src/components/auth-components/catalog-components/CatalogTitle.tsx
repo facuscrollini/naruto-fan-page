@@ -10,7 +10,6 @@ export const CatalogTitle = () =>{
         <div>
             <span>
         <p className="text-[5vh]">
-
             {catalogTitle}
         </p>
             </span>

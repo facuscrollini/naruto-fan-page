@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../../../hooks/useContext/useAuth"
 import { listOfCatalogs } from "../../navbar-components/CategoriesMenu"
+
 export const WelcomeCategoriesMenu = () => {
 
   const { changeCatalog } = useAuth()
@@ -30,9 +31,6 @@ export const WelcomeCategoriesMenu = () => {
     position == 6 ? setCarrousel([...listOfCatalogs.slice(-2), ...listOfCatalogs.slice(0, 1)]) : position == 0 ? setCarrousel([...listOfCatalogs.slice(-1), ...listOfCatalogs.slice(0, 2)]) : setCarrousel(listOfCatalogs.slice(position - 1, position + 2))
   }, [position])
 
-  useEffect(() => {
-    changeCatalog("clans")
-  }, [])
 
 
 
