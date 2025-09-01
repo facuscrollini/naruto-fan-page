@@ -3,9 +3,10 @@ import { useAuth } from "../../../hooks/useContext/useAuth"
 import { listOfCatalogs } from "../../navbar-components/CategoriesMenu"
 import { PreviewImage } from "./preview-components/PreviewImage"
 import { PreviewText } from "./preview-components/PreviewText"
+import type { NarutoStoreType } from "../../../context/narutoContext"
 
 interface PreviewDataType {
-  type?: string,
+  type?: keyof NarutoStoreType,
   title?: string,
   image?: string,
   description?: string
@@ -30,7 +31,7 @@ export const WelcomeCategoriesPreview = () => {
 
 
   return (
-    <div className="h-[50vh] rounded-2xl overflow-hidden">
+    <div className="lg:h-[30rem] xl:h-[45rem] h-[30rem] rounded-2xl overflow-hidden">
       <label className="relative group hover:cursor-pointer">
         <input type="checkbox" className="peer" hidden></input>
         <PreviewImage type={previewData?.type} />

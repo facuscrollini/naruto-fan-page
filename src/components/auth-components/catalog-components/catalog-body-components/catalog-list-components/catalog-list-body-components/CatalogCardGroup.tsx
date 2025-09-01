@@ -1,12 +1,19 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react"
 import { useAuth } from "../../../../../../hooks/useContext/useAuth"
 import { useNaruto } from "../../../../../../hooks/useContext/useNaruto"
 
-export const CatalogCardGroup = () => {
+type Props = {
+  page: number,
+  setPage: Dispatch<SetStateAction<number>>,
+  quantityOfPages: number,
+  setQuantityOfPages: Dispatch<SetStateAction<number>>
+}
 
-  const [page, setPage] = useState(1)
-  const [quantityPerPage, setQuantityPerPage] = useState(16)
-  const [quantityOfPages, setQuantityOfPages] = useState(1)
+export const CatalogCardGroup = ({ page, setPage, setQuantityOfPages }: Props) => {
+
+
+  const quantityPerPage = 16
+
   const { store } = useNaruto()
   const { catalog } = useAuth()
 
@@ -18,49 +25,28 @@ export const CatalogCardGroup = () => {
 
   const [listItems, setListItems] = useState(createListForCatalog(0, quantityPerPage))
 
-  const increasePage = () => {
-    if(page < quantityOfPages){
-      setPage(prev => prev + 1)
-    }
-  }
 
-  const decreasePage = () => {
-    if(page > 1){
-      setPage(prev => prev - 1)
-    }
-  }
-
-  useEffect(()=>{
-    if(page > 1){
+  useEffect(() => {
+    if (page > 1) {
       setListItems(createListForCatalog(quantityPerPage * (page - 1), quantityPerPage * page))
     }
-  },[page])
+  }, [page])
 
 
   useEffect(() => {
     setListItems(createListForCatalog(0, quantityPerPage))
     console.log("Cambió el catalogo")
+    setQuantityOfPages(Math.ceil(store[catalog!]?.length! / quantityPerPage))
+    setPage(1)
   }, [catalog])
-
-  useEffect(()=>{
-console.log("List items cambió!")
- setQuantityOfPages(Math.ceil(store[catalog!]?.length! / quantityPerPage))
- setPage(1)
-  },[listItems])
 
 
   return (
-    <>
+    <div className="bg-blue-400">
       {listItems?.map((item) => {
         return <p>{item.name}</p>
       })}
-      <div className="flex gap-10">
 
-        <button onClick={decreasePage} type="button"><i className="fa-solid fa-angle-left"></i></button>
-        <p>{page}</p>
-        <p>{quantityOfPages}</p>
-        <button onClick={increasePage} type="button"><i className="fa-solid fa-angle-right"></i></button>
-      </div>
-    </>
+    </div>
   )
 }

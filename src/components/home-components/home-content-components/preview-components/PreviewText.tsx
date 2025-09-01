@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router"
 import { useAuth } from "../../../../hooks/useContext/useAuth"
+import type { NarutoStoreType } from "../../../../context/narutoContext"
 
 interface Props {
   title?: string,
   description?: string,
-  type?: string
+  type?: keyof NarutoStoreType
 }
 
 
@@ -41,9 +42,9 @@ nav("/auth/catalog")
   return (
     <>
      
-        <p onClick={handleClick} className="md:text-left text-center mb-2 max-sm text-[3vh] sm:text-[5vh] lg:text-[10vh]" >{title}</p>
+        <p onClick={handleClick} className="md:text-left text-center mb-2 max-sm:text-[3rem] sm:text-[5rem] lg:text-[10vh]" >{title}</p>
   
-      <p className="max-md:text-center max-sm:text-[1.4vh]">{description}</p>
+      <p className="max-md:text-center max-sm:text-[1rem]">{description}</p>
     </>
   )
 }
