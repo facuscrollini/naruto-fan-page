@@ -4,6 +4,7 @@ export type SimpleGroupType = {
   id: number;
   name: string;
   characters: number[];
+  message?:string;
 };
 
 //Teams, Kekkei Genkai, Village and Clan Type End -------------------------------------------------------------

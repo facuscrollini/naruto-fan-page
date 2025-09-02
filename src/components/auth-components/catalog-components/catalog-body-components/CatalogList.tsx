@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react"
+import { type Dispatch, type SetStateAction } from "react"
 import { CatalogListHeader } from "../catalog-body-components/catalog-list-components/CatalogListHeader"
 import { CatalogListBody } from "../catalog-body-components/catalog-list-components/CatalogListBody"
 import { useAuth } from "../../../../hooks/useContext/useAuth"

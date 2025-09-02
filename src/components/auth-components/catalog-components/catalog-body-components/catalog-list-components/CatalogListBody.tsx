@@ -6,7 +6,7 @@ export const CatalogListBody = () => {
   const [page, setPage] = useState(1)
   const [quantityOfPages, setQuantityOfPages] = useState(1)
   return (
- <div className="flex flex-col h-full">
+ <div className="flex flex-col justify-between gap-[3rem]">
  <CatalogCardGroup setQuantityOfPages={setQuantityOfPages} quantityOfPages={quantityOfPages} page={page} setPage={setPage}/>
  <CatalogPages setQuantityOfPages={setQuantityOfPages} quantityOfPages={quantityOfPages} page={page} setPage={setPage}/>
  </div>
