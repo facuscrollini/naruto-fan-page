@@ -16,7 +16,7 @@ export const CatalogList = () => {
 
     return (
 
-        <div className="bg-gray-200 max-lg:hidden lg:col-span-3 h-full rounded-xl p-2">
+        <div className="bg-gray-200 max-lg:hidden md:col-span-3 pr-10 h-full rounded-l-xl p-2">
             <CatalogListHeader/>
             <CatalogListBody/>
         </div>

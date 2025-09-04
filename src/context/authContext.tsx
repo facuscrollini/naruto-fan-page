@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, type Dispatch, type SetStateAction } from "react";
 import type { NarutoStoreType } from "./narutoContext";
 
 
@@ -25,10 +25,20 @@ export type ValueType = {
     warningModal: boolean,
     setWarningModal: (type:boolean) => void,
     changeCatalog: (type: keyof NarutoStoreType) => void,
+    catalogItem: CatalogItemType,
+    setCatalogItem : Dispatch<SetStateAction<CatalogItemType>>,
     login?: (username: string, email: string, password: string) => void,
     logout?: () => void
 }
 
+export type CatalogItemType = {
+    id?: number,
+    name?:string,
+    image?: string,
+    description?: string,
+    type?:keyof NarutoStoreType
+
+}
 
 export const AuthContext = createContext<ValueType | undefined>(undefined)
 
@@ -39,6 +49,7 @@ export const AuthProvider = ({ children }: Props) => {
     const [catalog, setCatalog] = useState<keyof NarutoStoreType>("clans")
     const [logged, setLogged] = useState<boolean>(true)
     const [warningModal, setWarningModal] = useState<boolean>(false)
+    const [catalogItem, setCatalogItem] = useState<CatalogItemType>({})
 
     const login = (userName: string, email: string, password: string) => {
         setUser({
@@ -64,7 +75,7 @@ export const AuthProvider = ({ children }: Props) => {
     }
 
     return (
-        <AuthContext.Provider value={{ user, catalog, logged, changeCatalog, login, logout, warningModal, setWarningModal }}>
+        <AuthContext.Provider value={{ user, catalog, logged, changeCatalog, login, logout, warningModal, setWarningModal, catalogItem, setCatalogItem }}>
             {children}
         </AuthContext.Provider>
 
