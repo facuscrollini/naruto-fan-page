@@ -49,6 +49,7 @@ export const CatalogCardGroup = ({ page, setPage, setQuantityOfPages }: Props) =
     setQuantityOfPages(Math.ceil(store[catalog!]?.length! / quantityPerPage))
     setPage(1)
     setCatalogItem({})
+    console.log(store[catalog!])
   }, [catalog])
 
 
@@ -63,7 +64,7 @@ console.log(catalogItem)
     <div className="grid md:grid-cols-1 lg:grid-cols-2 my-[1rem] ml-[1rem] p-[2rem] gap-2 h-[45vh] overflow-auto">
       {listItems && listItems.map((item, index) => {
 
-        const description = catalog == "clans" ? (clans.find(el => el.id == item.id)?.description) : ""
+        const description = catalog == "clans" ? (clans.find(el => el.id == item.id)?.description) : catalog == "villages" ? (villages.find(el => el.id == item.id)?.description) : ""
 
         const image = "images" in item
           ? item.images[0]
