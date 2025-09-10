@@ -1,8 +1,9 @@
 import { NavBar } from '../components/NavBar'
 import { Footer } from '../components/Footer'
 import { Outlet } from 'react-router'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
-export const AdminLayout = () => {
+const AdminLayout = () => {
    return (
     <>
     <NavBar/>
@@ -11,3 +12,6 @@ export const AdminLayout = () => {
     </>
   )
 }
+
+
+export default withAuthenticationRequired(AdminLayout)

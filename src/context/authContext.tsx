@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }: Props) => {
 
     const [user, setUser] = useState<UserType>(initialState)
     const [catalog, setCatalog] = useState<keyof NarutoStoreType>("clans")
-    const [logged, setLogged] = useState<boolean>(true)
+    const [logged, setLogged] = useState<boolean>(false)
     const [warningModal, setWarningModal] = useState<boolean>(false)
     const [catalogItem, setCatalogItem] = useState<CatalogItemType>({})
 

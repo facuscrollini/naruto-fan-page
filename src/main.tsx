@@ -5,6 +5,7 @@ import { NarutoStoreProvider } from './context/narutoContext'
 import { BrowserRouter } from 'react-router'
 import { AppRoute } from './routes'
 import { AuthProvider } from './context/authContext'
+import { AuthZeroprovider } from './providers/AuthProvider'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -12,7 +13,9 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <NarutoStoreProvider>
         <AuthProvider>
+          <AuthZeroprovider>
           <AppRoute />
+          </AuthZeroprovider>
         </AuthProvider>
       </NarutoStoreProvider>
     </StrictMode>

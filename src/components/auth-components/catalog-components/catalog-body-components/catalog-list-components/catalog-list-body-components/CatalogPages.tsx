@@ -8,7 +8,7 @@ type Props = {
 }
 
 export const CatalogPages = ({ page, setPage, quantityOfPages }: Props) => {
-
+ 
   const increasePage = () => {
     if (page < quantityOfPages) {
       setPage(prev => prev + 1)
